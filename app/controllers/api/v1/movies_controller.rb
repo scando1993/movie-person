@@ -8,12 +8,12 @@ module Api
       def index
         @movies = Movie.all
 
-        render json: @movies
+        render json: @movies, include: [:casting, :directors, :producers]
       end
 
       # GET /movies/1
       def show
-        render json: @movie
+        render json: @movie, include: [:casting, :directors, :producers]
       end
 
       # POST /movies
@@ -49,7 +49,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def movie_params
-        params.require(:movie).permit(:id, :title, :releaseYear, :casting_id, :directors_id, :produces_id)
+        params.require(:movie).permit(:id, :title, :releaseYear)
       end
     end
   end

@@ -8,12 +8,12 @@ module Api
       def index
         @people = Person.all
 
-        render json: @people
+        render json: @people, include: [:movies_as_actor_or_actress, :movies_as_director, :movies_as_producer]
       end
 
       # GET /people/1
       def show
-        render json: @person
+        render json: @person, include: [:movies_as_actor_or_actress, :movies_as_director, :movies_as_producer]
       end
 
       # POST /people
@@ -30,7 +30,7 @@ module Api
       # PATCH/PUT /people/1
       def update
         if @person.update(person_params)
-          render json: @person
+          render json: @person, include: [:movies_as_actor_or_actress, :movies_as_director, :movies_as_producer]
         else
           render json: @person.errors, status: :unprocessable_entity
         end
@@ -49,7 +49,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def person_params
-        params.require(:person).permit(:id, :LastName, :FirstName, :Aliases, :MoviesAsActor_id, :MoviesAsDirector_id, :MoviesAsProduces_id)
+        params.require(:person).permit(:id, :LastName, :FirstName, :Aliases)
       end
     end
   end
