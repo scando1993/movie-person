@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  title: MyString
+  releaseYear: MyString
+  casting: one
+  directors: one
+  produces: one
+
+two:
+  id: MyString
+  title: MyString
+  releaseYear: MyString
+  casting: two
+  directors: two
+  produces: two

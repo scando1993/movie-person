@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  LastName: MyString
+  FirstName: MyString
+  Aliases: MyString
+  MoviesAsActor: one
+  MoviesAsDirector: one
+  MoviesAsProduces: one
+
+two:
+  id: MyString
+  LastName: MyString
+  FirstName: MyString
+  Aliases: MyString
+  MoviesAsActor: two
+  MoviesAsDirector: two
+  MoviesAsProduces: two
