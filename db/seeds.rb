@@ -5,15 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+people = (1..1000).to_a.map do
+  Person.create(
+      LastName: Faker::Name.last_name,
+      FirstName: Faker::Name.first_name,
+      Aliases: Faker::Lorem.sentence
+  )
+end
+
+_type = ['actor', 'actress', 'producer', 'director']
+
 10.times do
-  Movie.create(
+  movie = Movie.create(
       title: Faker::Book.title,
       releaseYear: Faker::Date.birthday(18, 65)
   )
 
-  Person.create(
-    LastName: Faker::Name.last_name,
-    FirstName: Faker::Name.first_name,
-    Aliases: Faker::Lorem.sentence
-  )
+  rand(people.size).times do
+    movie.movies_people.create(
+        person: people[rand(people.size)],
+        option: _type[rand(_type.size)]
+    )
+  end
 end
