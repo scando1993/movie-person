@@ -18,7 +18,7 @@ _type = ['actor', 'actress', 'producer', 'director']
 10.times do
   movie = Movie.create(
       title: Faker::Book.title,
-      releaseYear: Faker::Date.birthday(18, 65)
+      releaseYear: Faker::Date.birthday(18, 65).year.to_s
   )
 
   rand(people.size).times do

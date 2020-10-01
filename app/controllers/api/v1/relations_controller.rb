@@ -21,7 +21,7 @@ module Api
         @relation = MoviesPerson.new(relation_params)
 
         if @relation.save
-          render json: @relation, status: :created, location: @relation
+          render json: @relation, status: :created
         else
           render json: @relation.errors, status: :unprocessable_entity
         end
@@ -50,7 +50,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def relation_params
-        params.require(:relation).permit(:id, :movie_id, :person_id, :option)
+        params.require(:relation).permit(:movie_id, :person_id, :option)
       end
     end
   end

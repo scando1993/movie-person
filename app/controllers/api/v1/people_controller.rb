@@ -21,7 +21,7 @@ module Api
         @person = Person.new(person_params)
 
         if @person.save
-          render json: @person, status: :created, location: @person
+          render json: @person, status: :created
         else
           render json: @person.errors, status: :unprocessable_entity
         end
@@ -49,7 +49,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def person_params
-        params.require(:person).permit(:id, :LastName, :FirstName, :Aliases)
+        params.require(:person).permit(:LastName, :FirstName, :Aliases)
       end
     end
   end
