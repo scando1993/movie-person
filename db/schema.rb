@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2020_09_25_182132) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "LastName"
-    t.string "FirstName"
-    t.string "Aliases"
+    t.string "lastName"
+    t.string "firstName"
+    t.string "aliases"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

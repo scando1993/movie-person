@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 people = (1..1000).to_a.map do
   Person.create(
-      LastName: Faker::Name.last_name,
-      FirstName: Faker::Name.first_name,
-      Aliases: Faker::Lorem.sentence
+      lastName: Faker::Name.last_name,
+      firstName: Faker::Name.first_name,
+      aliases: Faker::Lorem.sentence
   )
 end
 

@@ -4,7 +4,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
   let(:valid_attributes) do
     {
         title: 'American Pie',
-        releaseYear: ''
+        releaseYear: '1987'
     }
   end
 end
