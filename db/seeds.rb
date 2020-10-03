@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-people = (1..1000).to_a.map do
+people = (1..10).to_a.map do
   Person.create(
       lastName: Faker::Name.last_name,
       firstName: Faker::Name.first_name,

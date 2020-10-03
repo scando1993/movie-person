@@ -1,5 +1,5 @@
 class Person < ApplicationRecord
-  has_many :movies_people
+  has_many :movies_people, dependent: :delete_all
   has_many :movies, through: :movies_people
 
   def movies_as_actor_or_actress

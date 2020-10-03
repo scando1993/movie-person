@@ -49,7 +49,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def person_params
-        params.require(:person).permit(:LastName, :FirstName, :Aliases)
+        params.require(:person).permit(:lastName, :firstName, :aliases)
       end
     end
   end
